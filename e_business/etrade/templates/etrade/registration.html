@@ -1,0 +1,398 @@
+
+{% block content %}
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css'%}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="first_name" name="first_name" required>
+                                            <label class="label--desc">First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="last_name" name="last_name" required>
+                                            <label class="label--desc">Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Sex</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="gender" id="gender">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Twitter Handle</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="sc_handle" name="sc_handle" >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" id="password" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="number" id="Age" name="age">
+                                            <label class="label--desc">Age</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="phone_number" name="phone_number">
+                                            <label class="label--desc">Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Marital Status</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="marital_status" id="Status">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>Single</option>
+                                            <option>Engaged</option>
+                                            <option>Married</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Educational Qualification</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="edu_qualification" id="edu_qualification">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>Waec</option>
+                                            <option>B.sc</option>
+                                            <option>M.sc</option>
+                                            <option>Ph.D</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Occupation</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="occupation" name="occupation">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="address" name="address">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">State of Origin</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="state_of_origin" name="state_of_origin">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Country</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="country" name="country">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row p-t-20">
+                            <label class="label label--block">Are you an existing customer? <a href="{% url 'login'%}"> Sign in</a></label>
+                          
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+
+  <!--   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        $('input[type="radio"]').on('click', function () {
+            window.location = $(this).val();
+        });
+    </script> -->
+
+
+
+</body>
+
+
+</html>
+
+{% endblock %}
+
+<!-- end document-->
+
+
+
+
+<!--
+<h2 class="text-center"><strong>REGISTRATION</strong></h2>
+<form method="POST" class="row g-3 needs-validation" novalidate>
+    {% csrf_token %}
+   
+    <div class="col-md-6">
+        <br>
+        <label for="fname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+    </div>
+    <div class="col-md-6">
+        <br>
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
+    </div>
+
+    <div class="col-md-6">
+        <br>
+        <label for="Gender" class="form-label">Gender</label>
+        <select id="gender" name='gender'>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+ 
+    </div>
+
+    <div class="col-md-6">
+        <br>
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" id="Age" placeholder="Age" name="age">
+     <select id="Age" name="age">
+        <option value="21-under">21-Under</option>
+        <option value="22-34">22-34</option>
+        <option value="35-44">35-44</option>
+        <option value="45-54">45-54</option>
+        <option value="55-64">55-64</option>
+        <option value="65-Over">65-Over</option>
+
+    </select> -->
+    
+   <!--  </div>
+
+    <div class="col-md-6">
+        <br>
+        <label for="email_user" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" required='' name="email">
+    </div>
+
+    <div class="col-md-6">
+        <br>
+        <label for="pass" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required='yes' name="password">
+    </div>
+    <div class="col-12">
+        <br>
+        <label for="location" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+    </div>
+
+    
+    <div class="col-12">
+        <br>
+        <label for="Number" class="form-label">Phone Number</label>
+        <input type="number" class="form-control" id="phone_number" placeholder="Phone Number" name="phone_number">
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="Status" class="form-label">Marital Status</label>
+        <select id="Status" name="marital_status">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Single & Searching">Single & Searching</option>
+
+        </select>
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="Handle" class="form-label">Twitter Handle</label>
+        <input type="text" class="form-control" id="sc_handle" placeholder="Handle" name="sc_handle">
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="Education" class="form-label">Educational Qualification</label>
+    <select id="Education" name="edu_qualification">
+        <option value="Waec">Waec</option>
+        <option value="B.sc">B.sc</option>
+        <option value="M.sc">M.sc</option>
+        <option value="P.hD">P.hD</option>
+        
+    
+    </select>
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="occupation" class="form-label">Occupation</label>
+        <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation">
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="state" class="form-label">State of Origin</label>
+        <input type="text" class="form-control" id="state_of_origin" placeholder="State of Origin" name="state_of_origin">
+    </div>
+
+    <div class="col-12">
+        <br>
+        <label for="country" class="form-label">Country</label>
+        <input type="text" class="form-control" id="country" placeholder="Country" name="country">
+    </div>
+    
+    <div class="col-12">
+        <br >
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
+    
+   </div>
+
+</form>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()</script>
+
+
+<script>
+    $('#hide_msg').click(function () {
+        $('#login_error_div').hide();
+
+    });
+
+
+
+</script> --> 

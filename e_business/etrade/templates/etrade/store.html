@@ -1,0 +1,50 @@
+ {% extends 'etrade/base.html' %} 
+{% load static %}
+{% block content %}
+    <div class="row">
+        {% for Product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{{Product.imageURL}}">
+            <div class="box-element product">
+                <h6><strong>{{Product.name}}</strong></h6>
+                <hr>
+                <button data-product="{{Product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block;float:right">&#8358;{{Product.price|floatformat:2}}</h4>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+<!-- <style>-->
+<!--.pagination {-->
+<!--  display: inline-block;-->
+<!--}-->
+
+<!--.pagination a {-->
+<!--  color: black;-->
+<!--  float: left;-->
+<!--  padding: 8px 16px;-->
+<!--  text-decoration: none;-->
+<!--    margin: auto;-->
+
+
+
+<!--}-->
+<!--</style>-->
+
+
+
+<!--<div class="pagination"  >-->
+<!--  <a href="{% url 'store' %}">&laquo;</a>-->
+<!--  <a href="{% url 'Livestock' %}">1</a>-->
+<!--  <a href="{% url 'Equipment' %}">2</a>-->
+<!--  <a href="{% url 'Feed' %}">3</a>-->
+<!--  <a href="{% url 'Seedling' %}">4</a>-->
+<!--  <a href="#">&raquo;</a>-->
+<!--</div>-->
+
+{% endblock content %}
+
+

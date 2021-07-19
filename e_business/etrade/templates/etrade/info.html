@@ -1,0 +1,158 @@
+{% extends 'etrade/base.html' %}
+{% block content %}
+<div id="login_error_div" style="display: none;" class="alert alert-warning alert-dismissible fade show text-center"
+    role="alert">
+    <strong><span>Sorry!! The code you entered does not match</span></strong><br>
+    <span>Kindly check your code, brotherly</span>
+    <button id="hide_msg" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="col-12">
+    <h1 class='text-center'><strong>SIGN UP</strong></h1>
+</div>
+
+
+<form method="POST" class="row g-3 needs-validation" novalidate>
+
+    {% csrf_token %}
+
+
+    <div class="col-md-6">
+        <!-- {{form.First_name.errors}} -->
+        <label for="mda" class="form-label">First Name</label>
+        {{form.First_name}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.Last_name.errors}} -->
+        <label for="mda" class="form-label">Last Name</label>
+        {{form.Last_name}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.age.errors}} -->
+        <label for="age" class="form-label">Age</label>
+        {{form.age}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.gender.errors}} -->
+        <label for="gender" class="form-label">Gender</label>
+        {{form.gender}}
+    </div>
+
+    <div class="col-md-6">
+
+        <label for="email" class="form-label">Email</label>
+        {{form.email}}
+        <!-- <p>{{form.email.errors}}</p> -->
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.phone_number.errors}} -->
+        <label for="phone_number" class="form-label">Phone Number</label>
+        {{form.phone_number}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.marital_status.errors}} -->
+        <label for="marital_status" class="form-label">Marital Status</label>
+        {{form.marital_status}}
+    </div>
+
+    <div class="col-md-6">
+       <!--  {{form.sc_handle.errors}} -->
+        <label for="Twitter" class="form-label">Twitter Handle</label>
+        {{form.sc_handle}}
+    </div>
+
+    <div class="col-md-6">
+       <!--  {{form.edu_qualification.errors}} -->
+        <label for="edu" class="form-label">Educational Qualification</label>
+        {{form.edu_qualification}}
+    </div>
+
+    <div class="col-md-6">
+       <!--  {{form.occupation.errors}} -->
+        <label for="occupation" class="form-label">Occupation</label>
+        {{form.occupation}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.income.errors}} -->
+        <label for="income" class="form-label">Income</label>
+        {{form.income}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.organization.errors} -->
+        <label for="organization" class="form-label">Organization</label>
+        {{form.organization}}
+    </div>
+
+    <div class="col-md-6">
+      <!--   {{form.livestock.errors}} -->
+        <label for="livestock" class="form-label">Livestock</label>
+        {{form.livestock}}
+    </div>
+
+    <div class="col-md-6">
+        <!-- {{form.state_of_origin.errors}} -->
+        <label for="state_of_origin" class="form-label">State of Origin</label>
+        {{form.state_of_origin}}
+    </div>
+
+
+
+    <div class="col-md-6">
+        <!-- {{form.country.errors}} -->
+        <label for="mda" class="form-label">Country</label>
+        {{form.country}}
+    </div>
+
+
+    <div class="col-12">
+        <br>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
+
+
+</form>
+
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()</script>
+
+
+
+<script>
+    $('#hide_msg').click(function () {
+        $('#login_error_div').hide();
+
+    });
+
+
+
+</script>
+{% endblock %}

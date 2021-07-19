@@ -1,0 +1,228 @@
+
+{% block content %}
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+<div id="login_error_div" style="display: none;" class="alert alert-warning alert-dismissible fade show text-center"
+  role="alert">
+  <strong><span>Sorry!! The code you entered does not match</span></strong><br>
+  <span>Kindly check your code, brotherly</span>
+  <button id="hide_msg" type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css"  href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+          <h2 class="heading-section"><strong>Login</strong></h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mb-4">Sign In</h3>
+              </div>
+              <div class="w-100">
+                <p class="social-media d-flex justify-content-end">
+                  <a href="https://www.facebook.com/" class="social-icon d-flex align-items-center justify-content-center"><span
+                      class="fa fa-facebook"></span></a>
+                  <a href="https://twitter.com/login?lang=en" class="social-icon d-flex align-items-center justify-content-center"><span
+                      class="fa fa-twitter"></span></a>
+                </p>
+              </div>
+            </div>
+            {{m}}
+            <form method="POST" class="login-form" >
+                {% csrf_token %}
+              <div class="form-group">
+                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span>
+                </div>
+                <input type="email" class="form-control rounded-left" id="email" aria-describedby="emailHelp" name="email" required placeholder="Email">
+              </div>
+              <div class="form-group">
+                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span>
+                </div>
+                <input type="password" class="form-control rounded-left" placeholder="Password" id="password" name="password" required>
+              </div>
+              <div class="form-group d-flex align-items-center">
+                <div class="w-100">
+                  <label class="checkbox-wrap checkbox-primary mb-0"><a href="{% url 'store' %}">Back </a>
+                    <!-- <button onClick="window.location.href='store';" class="btn btn-primary rounded submit">Back</button> -->
+                    
+                    <!-- <input type="checkbox" checked>
+                    <span class="checkmark"></span> -->
+                  </label>
+                </div>
+                <div class="w-100 d-flex justify-content-end">
+                  <button type="submit" class="btn btn-primary rounded submit">Login</button>
+                </div>
+              </div>
+              <div class="form-group mt-4">
+                <div class="w-100 text-center">
+                  <p class="mb-1">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+                  <p><a href="{% url 'sinzu' %}">Guest access</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock %}
+
+
+
+<!-- 
+<form method="POST">
+{% csrf_token %} -->
+<!-- <br >
+<h2 class="text-center"><strong>LOGIN</strong></h2>
+
+<div id="login_error_div" style="display: none;" class="alert alert-warning alert-dismissible fade show text-center"
+  role="alert">
+  <strong><span>Sorry!! The code you entered does not match</span></strong><br>
+  <span>Kindly check your code, brotherly</span>
+  <button id="hide_msg" type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  <div class=".col-md-6 .offset-md-3">
+
+
+  <div class="form-group">
+    <br >
+
+
+
+    <label for="user_name" class="form-label">E-mail</label>
+    <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="email" required="yes" placeholder="Email">
+    
+  </div>
+  
+  <div class="form-group">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required="yes" placeholder="Password">
+  </div>
+ 
+  
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+ 
+</form>
+<br>
+<br>
+<div class="d-flex position-relative">
+  
+  <label class="form-check-label" for="exampleCheck1">Don't have an account?</label> <a href="{% url 'register' %}"
+    class="stretched-link link-primary">Sign up </a>
+</div>
+<br>
+<div class="d-flex position-relative">
+   <a href="{% url 'sinzu' %}" class="stretched-link link-primary">Guest access </a>
+</div>
+
+</div>
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()</script>
+
+
+<script>
+  function LoginDetails() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    $.ajax({
+      type: 'GET',
+      url: "{% url 'login' %}",
+      data: {
+        'email': email,
+        'password': password
+      },
+
+      success: function (response) {
+
+        if (response["valid"]) {
+
+
+        } else {
+          event.preventDefault();
+          // alert("sorry!! code does not exist")
+          // document.getElementById("id_Print").click();
+          $('#login_error_div').show();
+
+        }
+      }
+    })
+
+  }
+
+</script>
+<script>
+  $('#hide_msg').click(function () {
+    $('#login_error_div').hide();
+
+  });
+
+
+
+</script> -->
+
+

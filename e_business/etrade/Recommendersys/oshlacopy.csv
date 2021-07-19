@@ -1,0 +1,7 @@
+,source,Spath,edgeW,noOfEdges,from,to,dist,Mean
+0,mannyconcepts-amoodaniel_,2.0,1.0,2,mannyconcepts,amoodaniel_,0.16666666666666666,0.8888888888888888
+1,mannyconcepts-enilobs,2.0,1.0,1,mannyconcepts,enilobs,0.3333333333333333,1.1111111111111112
+2,amoodaniel_-mannyconcepts,3.0,0.0,2,amoodaniel_,mannyconcepts,0.16666666666666666,1.222222222222222
+3,enilobs-amoodaniel_,3.0,0.0,2,enilobs,amoodaniel_,0.16666666666666666,1.222222222222222
+4,chyderaa-amoodaniel_,,,1,chyderaa,amoodaniel_,0.33333333333333337,
+5,chyderaa-obinna,,,1,chyderaa,obinna,0.5,
